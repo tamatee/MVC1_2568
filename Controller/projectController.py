@@ -41,3 +41,7 @@ class ProjectController:
             )
 
         return filtered
+
+    def loadProjects(self):
+        self.projects = loadProjects()
+        return self.projects
