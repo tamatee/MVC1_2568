@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QApplication
 from View.LoginView import LoginView
-from View.app import MainWindow
+from View.AdminConsole import MainWindow
 from View.UserPledgeView import UserPledgeView
 from Model.UserManager import UserManager
 import sys
