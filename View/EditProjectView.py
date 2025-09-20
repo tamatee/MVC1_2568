@@ -154,7 +154,7 @@ class EditProjectView(QWidget):
 
     def updateCSV(self, updated_project):
         try:
-            file_path = r'Model/data/Projects.csv'
+            file_path = r'Data/Projects.csv'
 
             # Read existing data
             existing_data = []
@@ -185,7 +185,7 @@ class EditProjectView(QWidget):
 
     def deleteFromCSV(self):
         try:
-            file_path = r'Model/data/Projects.csv'
+            file_path = r'Data/Projects.csv'
 
             # Read existing data
             existing_data = []

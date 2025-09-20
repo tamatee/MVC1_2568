@@ -177,7 +177,7 @@ class UserPledgeView(QWidget):
         }
 
         try:
-            with open(r'Model/data/Pledges.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/Pledges.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     if row['user_id'] == str(self.user_info['user_id']):
@@ -204,7 +204,7 @@ class UserPledgeView(QWidget):
 
         # ดึง Pledge ของผู้ใช้
         try:
-            with open(r'Model/data/Pledges.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/Pledges.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     if row['user_id'] == str(self.user_info['user_id']):
@@ -222,7 +222,7 @@ class UserPledgeView(QWidget):
     def loadProjects(self):
         projects = {}
         try:
-            with open(r'Model/data/Projects.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/Projects.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     projects[row['project_id']] = row
@@ -233,7 +233,7 @@ class UserPledgeView(QWidget):
     def loadRewards(self):
         rewards = {}
         try:
-            with open(r'Model/data/RewardTier.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/RewardTier.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     rewards[row['reward_id']] = row

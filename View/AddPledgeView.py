@@ -160,7 +160,7 @@ class AddPledgeView(QWidget):
 
     def saveToCSV(self, new_pledge):
         try:
-            file_path = r'Model/data/Pledges.csv'
+            file_path = r'Data/Pledges.csv'
 
             # Read existing data
             existing_data = []

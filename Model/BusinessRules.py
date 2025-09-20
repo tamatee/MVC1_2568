@@ -18,7 +18,7 @@ class BusinessRules:
     @staticmethod
     def getRewardInfo(reward_id):
         try:
-            with open(r'Model/data/RewardTier.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/RewardTier.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     if row["reward_id"] == str(reward_id):
@@ -36,7 +36,7 @@ class BusinessRules:
     @staticmethod
     def getProjectInfo(project_id):
         try:
-            with open(r'Model/data/Projects.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/Projects.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     if row["project_id"] == str(project_id):
@@ -72,7 +72,7 @@ class BusinessRules:
         # นับจำนวน pledge ที่ successful สำหรับรางวัลนี้
         successful_count = 0
         try:
-            with open(r'Model/data/Pledges.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/Pledges.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     if row["reward_id"] == str(reward_id) and row["status"] == "Success":
@@ -128,7 +128,7 @@ class BusinessRules:
         try:
             # อ่านข้อมูลปัจจุบัน
             projects = []
-            with open(r'Model/data/Projects.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/Projects.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 projects = list(reader)
 
@@ -140,7 +140,7 @@ class BusinessRules:
                     break
 
             # เขียนกลับไฟล์
-            with open(r'Model/data/Projects.csv', 'w', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/Projects.csv', 'w', newline="", encoding="utf-8") as csvfile:
                 fieldnames = ["project_id", "project_name", "category", "funding_goal", "deadline", "current_funding"]
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
@@ -156,7 +156,7 @@ class BusinessRules:
         try:
             # อ่านข้อมูลปัจจุบัน
             rewards = []
-            with open(r'Model/data/RewardTier.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/RewardTier.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 rewards = list(reader)
 
@@ -168,7 +168,7 @@ class BusinessRules:
                     break
 
             # เขียนกลับไฟล์
-            with open(r'Model/data/RewardTier.csv', 'w', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/RewardTier.csv', 'w', newline="", encoding="utf-8") as csvfile:
                 fieldnames = ["reward_id", "project_id", "reward_name", "min_amount", "quota"]
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
@@ -201,7 +201,7 @@ class BusinessRules:
     def getRejectionCount(user_id):
         count = 0
         try:
-            with open(r'Model/data/Pledges.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/Pledges.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     if row["user_id"] == str(user_id) and row["status"] == "Rejected":

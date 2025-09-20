@@ -4,7 +4,7 @@ import os
 # load data from CSV files as 'dict'
 def loadProjects():
     projects = []
-    file_path = r'Model/data/Projects.csv'
+    file_path = r'Data/Projects.csv'
 
     with open(file_path, newline="", encoding="utf-8") as csvfile:
         reader = csv.DictReader(csvfile)
@@ -21,7 +21,7 @@ def loadProjects():
 
 def loadPledges():
     pledges = []
-    file_path = r'Model/data/Pledges.csv'
+    file_path = r'Data/Pledges.csv'
 
     if not os.path.exists(file_path):
         return pledges

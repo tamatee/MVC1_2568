@@ -6,7 +6,7 @@ class UserManager:
     def getAllUsers():
         users = []
         try:
-            with open(r'Model/data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     users.append({
@@ -22,7 +22,7 @@ class UserManager:
     @staticmethod
     def getUserById(user_id):
         try:
-            with open(r'Model/data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     if row['user_id'] == str(user_id):
@@ -38,7 +38,7 @@ class UserManager:
     @staticmethod
     def getUserByUsername(username):
         try:
-            with open(r'Model/data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     if row['username'].lower() == username.lower():
@@ -64,8 +64,8 @@ class UserManager:
 
             # อ่านข้อมูลเก่า
             existing_data = []
-            if os.path.exists(r'Model/data/UsersWithPassword.csv'):
-                with open(r'Model/data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            if os.path.exists(r'Data/UsersWithPassword.csv'):
+                with open(r'Data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
                     reader = csv.DictReader(csvfile)
                     existing_data = list(reader)
 
@@ -78,7 +78,7 @@ class UserManager:
             })
 
             # เขียนกลับไฟล์
-            with open(r'Model/data/UsersWithPassword.csv', 'w', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/UsersWithPassword.csv', 'w', newline="", encoding="utf-8") as csvfile:
                 fieldnames = ['user_id', 'username', 'email', 'password']
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
@@ -94,7 +94,7 @@ class UserManager:
         try:
             # อ่านข้อมูลเก่า
             existing_data = []
-            with open(r'Model/data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 existing_data = list(reader)
 
@@ -110,7 +110,7 @@ class UserManager:
                     break
 
             # เขียนกลับไฟล์
-            with open(r'Model/data/UsersWithPassword.csv', 'w', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/UsersWithPassword.csv', 'w', newline="", encoding="utf-8") as csvfile:
                 fieldnames = ['user_id', 'username', 'email', 'password']
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()
@@ -127,7 +127,7 @@ class UserManager:
         try:
             # อ่านข้อมูลเก่า
             existing_data = []
-            with open(r'Model/data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/UsersWithPassword.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 existing_data = list(reader)
 
@@ -135,7 +135,7 @@ class UserManager:
             existing_data = [user for user in existing_data if user['user_id'] != str(user_id)]
 
             # เขียนกลับไฟล์
-            with open(r'Model/data/UsersWithPassword.csv', 'w', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/UsersWithPassword.csv', 'w', newline="", encoding="utf-8") as csvfile:
                 fieldnames = ['user_id', 'username', 'email', 'password']
                 writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 writer.writeheader()

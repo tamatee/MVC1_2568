@@ -175,7 +175,7 @@ class LoginView(QWidget):
 
         # ตรวจสอบในไฟล์ CSV (สำหรับกรณีที่มีผู้ใช้เพิ่มเติม)
         try:
-            with open(r'Model/data/User.csv', 'r', newline="", encoding="utf-8") as csvfile:
+            with open(r'Data/User.csv', 'r', newline="", encoding="utf-8") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     if row['username'].lower() == username:
