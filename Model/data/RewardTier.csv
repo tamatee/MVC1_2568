@@ -1,0 +1,17 @@
+reward_id,project_id,reward_name,min_amount,quota
+1,10000001,T-Shirt,500,100
+2,10000001,Smart Sensor Kit,2000,50
+3,10000002,Digital Copy,300,500
+4,10000002,Collector Pack,1500,100
+5,10000003,Thank You Card,200,200
+6,10000003,Solar Lamp,1000,80
+7,10000004,Early Access,400,300
+8,10000004,Premium License,2000,50
+9,10000005,Keychain,150,500
+10,10000005,Handmade Bag,800,100
+11,10000006,Certificate,300,200
+12,10000006,Special Gift,1000,100
+13,10000007,Digital Album,250,400
+14,10000007,Vinyl Record,1200,80
+15,10000008,Sticker Pack,500,300
+16,10000008,Drone Mini Model,3000,50
