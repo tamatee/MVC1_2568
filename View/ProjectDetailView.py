@@ -16,18 +16,18 @@ class ProjectDetailView(QWidget):
         mainLayout.setContentsMargins(20, 20, 20, 20)
         mainLayout.setSpacing(15)
 
-        # --- Title ---
+        # Title
         title = QLabel(f"[{project['project_id']}] {project['project_name']}")
         title.setStyleSheet("font-weight: bold; font-size: 18px; color: #333;")
         mainLayout.addWidget(title, alignment=Qt.AlignCenter)
 
-        # --- Separator Line ---
+        # Separator Line
         line = QFrame()
         line.setFrameShape(QFrame.HLine)
         line.setFrameShadow(QFrame.Sunken)
         mainLayout.addWidget(line)
 
-        # --- Project Info ---
+        # Project Info
         infoLayout = QVBoxLayout()
         infoLayout.setSpacing(10)
 
@@ -53,7 +53,7 @@ class ProjectDetailView(QWidget):
 
         mainLayout.addLayout(infoLayout)
 
-        # --- Progress Bar ---
+        #Progress Bar
         progressLabel = QLabel("Progress:")
         progressLabel.setStyleSheet("font-weight: bold; font-size: 14px;")
         mainLayout.addWidget(progressLabel)

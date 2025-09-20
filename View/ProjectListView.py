@@ -11,24 +11,20 @@ class ProjectListView(QWidget):
 
         layout = QVBoxLayout()
 
-        # สร้างตาราง
         self.table = QTableWidget()
         self.table.setColumnCount(5)
         self.table.setHorizontalHeaderLabels(["ID", "Name", "Category", "Goal", "Current Funding"])
         layout.addWidget(self.table)
 
-        # ปุ่มเปิดรายละเอียด
         self.detailButton = QPushButton("View Detail")
         self.detailButton.clicked.connect(self.openDetail)
         layout.addWidget(self.detailButton)
 
         self.setLayout(layout)
 
-        # โหลดข้อมูลครั้งแรก
         self.loadProjects(self.controller.getAllProjects())
 
     def loadProjects(self, projects):
-        """Fill table with project data"""
         self.table.setRowCount(len(projects))
         for row, proj in enumerate(projects):
             self.table.setItem(row, 0, QTableWidgetItem(proj["project_id"]))
@@ -40,7 +36,6 @@ class ProjectListView(QWidget):
         self.table.resizeColumnsToContents()
 
     def openDetail(self):
-        """เปิดหน้ารายละเอียดโครงการจากแถวที่เลือก"""
         current_row = self.table.currentRow()
         if current_row >= 0:
             project = self.controller.getAllProjects()[current_row]
